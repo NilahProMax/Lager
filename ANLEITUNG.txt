@@ -1,0 +1,22 @@
+LAGERBUCH AUF DAS IPHONE BRINGEN (einmalig, ca. 10 Minuten)
+
+Die App muss einmal im Internet liegen, damit Safari sie installieren kann.
+Danach läuft sie offline. Deine Daten bleiben nur auf deinem iPhone.
+
+1. Auf github.com ein kostenloses Konto anlegen.
+2. Oben rechts "+" > "New repository". Name: lagerbuch. "Public" lassen. "Create repository".
+3. "uploading an existing file" antippen und ALLE Dateien aus diesem Ordner hochladen
+   (index.html, manifest.json, sw.js, icon-180.png, icon-192.png, icon-512.png). "Commit changes".
+4. Im Repository: Settings > Pages > Branch: "main", Ordner "/ (root)" > Save.
+   Nach 1-2 Minuten steht dort deine Adresse: https://DEINNAME.github.io/lagerbuch/
+5. Diese Adresse am iPhone in SAFARI öffnen (nicht Chrome).
+6. Teilen-Symbol > "Zum Home-Bildschirm" > Hinzufügen.
+7. Die App einmal über das neue Symbol öffnen, solange du Internet hast. Ab dann geht sie offline.
+
+WICHTIG
+- Immer über das Symbol auf dem Home-Bildschirm öffnen, nicht über Safari.
+  Safari und das Symbol haben getrennte Speicher.
+- Löschst du das Symbol, sind die Daten weg. Deshalb: einmal pro Woche
+  Abrechnung > "Sicherung speichern" > "In Dateien sichern" (am besten iCloud Drive).
+- Wiederherstellen: Abrechnung > "Sicherung laden" > Datei auswählen.
+- Der Programmcode auf GitHub ist öffentlich, deine Lagerdaten nicht. Die verlassen dein iPhone nie.
