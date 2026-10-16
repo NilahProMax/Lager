@@ -40,6 +40,8 @@
   --s1:#3987e5; --s2:#d95926; --s3:#199e70;
   --hero:#24282c; --hero-fg:#f3f3ee; --hero-muted:#a5aab0; color-scheme:dark}
 [hidden]{display:none!important}
+html,body,button,input,select,textarea,a,.lock,.pad{touch-action:manipulation}
+.lock,.pad,.pad button{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 html,body{min-height:100%}
 body{background:var(--bg);color:var(--fg);font:16px/1.45 var(--body);-webkit-tap-highlight-color:transparent;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
@@ -1002,7 +1004,9 @@ async function pinDigit(d){
   if(!pinMode||pinBuf.length>=4)return;
   if(Date.now()<pinBlockUntil){pinErr(`Zu viele Versuche. Warte ${Math.ceil((pinBlockUntil-Date.now())/1000)} s.`);return}
   pinBuf+=d;pinDots();if(pinBuf.length<4)return;
-  const entered=pinBuf;await new Promise(r=>setTimeout(r,120));
+  const entered=pinBuf;
+  if(pinMode==='set1'){pinFirst=entered;pinShow('set2');return}
+  await new Promise(r=>setTimeout(r,80));
   const P=pinData();
   if(pinMode==='unlock'||pinMode==='verifyOff'||pinMode==='verifyChange'){
     if(P&&await pinHash(entered,P.salt)===P.hash){pinFails=0;
